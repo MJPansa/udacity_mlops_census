@@ -1,0 +1,32 @@
+workclass
+--------------------
+-> Private: 87.02 %
+-> Self-emp-not-inc: 79.91 %
+education
+--------------------
+-> HS-grad: 87.03 %
+-> Some-college: 86.09 %
+marital-status
+--------------------
+-> Married-civ-spouse: 74.18 %
+-> Never-married: 97.35 %
+occupation
+--------------------
+-> Exec-managerial: 79.31 %
+-> Prof-specialty: 81.14 %
+relationship
+--------------------
+-> Husband: 74.34 %
+-> Not-in-family: 93.36 %
+race
+--------------------
+-> White: 84.93 %
+-> Black: 91.53 %
+sex
+--------------------
+-> Male: 82.22 %
+-> Female: 93.10 %
+native-country
+--------------------
+-> United-States: 85.38 %
+-> Mexico: 96.21 %
