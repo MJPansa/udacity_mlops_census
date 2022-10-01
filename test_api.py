@@ -1,9 +1,10 @@
 import json
+from fastapi.testclient import TestClient
 from pydantic import BaseModel
-import pytest
-import requests
 
-BASE_URL = 'http://127.0.0.1:8000'
+from .main import app
+
+client = TestClient(app)
 
 class PredData(BaseModel):
     age:int=38
@@ -24,22 +25,22 @@ class PredData(BaseModel):
 post_data = PredData().dict()
 
 def test_get_method():
-    r = requests.get(BASE_URL + '/')
+    r = client.get('/')
     response = json.loads(r.content.decode('utf-8'))
     assert r.status_code == 200
     assert response['message'] == 'Hello Stranger!'
 
 def test_post_method_1():
-    r = requests.post(BASE_URL + '/predict', json=post_data)
+    r = client.post('/predict', json=post_data)
     response = json.loads(r.content.decode('utf-8'))
     assert r.status_code == 200
-    assert response['prediction'] == ' <=50K'
+    assert response['prediction'][0] == ' <=50K'
 
 def test_post_method_2():
     post_data['capital_gain'] = 20000
-    r = requests.post(BASE_URL + '/predict', json=post_data)
+    r = client.post('/predict', json=post_data)
     response = json.loads(r.content.decode('utf-8'))
     assert r.status_code == 200
-    assert response['prediction'] == ' >50K'
+    assert response['prediction'][0] == ' >50K'
     
 
