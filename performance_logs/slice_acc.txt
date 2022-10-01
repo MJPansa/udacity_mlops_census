@@ -1,32 +1,38 @@
-workclass
+----------------------------------------
+----------------------------------------
+Accuracy scores for slices of the data:
+----------------------------------------
+----------------------------------------
+
+feature: workclass
+-> Private: 86.48 %
+-> Self-emp-not-inc: 81.17 %
 --------------------
--> Private: 87.02 %
--> Self-emp-not-inc: 79.91 %
-education
+feature: education
+-> HS-grad: 86.76 %
+-> Some-college: 86.32 %
 --------------------
--> HS-grad: 87.03 %
--> Some-college: 86.09 %
-marital-status
+feature: marital-status
+-> Married-civ-spouse: 74.02 %
+-> Never-married: 97.50 %
 --------------------
--> Married-civ-spouse: 74.18 %
--> Never-married: 97.35 %
-occupation
+feature: occupation
+-> Prof-specialty: 79.87 %
+-> Craft-repair: 82.45 %
 --------------------
--> Exec-managerial: 79.31 %
--> Prof-specialty: 81.14 %
-relationship
+feature: relationship
+-> Husband: 74.27 %
+-> Not-in-family: 93.12 %
 --------------------
--> Husband: 74.34 %
--> Not-in-family: 93.36 %
-race
+feature: race
+-> White: 84.73 %
+-> Black: 92.72 %
 --------------------
--> White: 84.93 %
--> Black: 91.53 %
-sex
+feature: sex
+-> Male: 81.93 %
+-> Female: 92.89 %
 --------------------
--> Male: 82.22 %
--> Female: 93.10 %
-native-country
+feature: native-country
+-> United-States: 85.21 %
+-> Mexico: 97.47 %
 --------------------
--> United-States: 85.38 %
--> Mexico: 96.21 %
