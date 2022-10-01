@@ -1,5 +1,7 @@
-# Script to train machine learning model.
-from typing import List
+"""
+This script contains the main logic for data processing and training the model
+"""
+from typing import List, Union
 import pandas as pd
 import numpy as np
 import joblib
@@ -11,12 +13,6 @@ from sklearn.metrics import accuracy_score, precision_score
 
 if not os.path.exists('../encodings'):
     os.mkdir('../encodings')
-
-# Add the necessary imports for the starter code.
-
-# Add code to load in the data.
-
-# Proces the test data with the process_data function.
 
 def fit_encoders(data:pd.DataFrame, cats:list, label:str, save=True, return_=False):
     '''
@@ -103,7 +99,15 @@ def log_slice_performance(data:pd.DataFrame, preds:np.array, cats:list):
                 outfile.writelines(f'-> {val}: {100*acc:.2f} %\n')
             outfile.writelines('-'*20 + '\n')
 
-def score_model(y_test, preds, metric:str='accuracy'):
+def score_model(y_test:Union[np.array, pd.Series], preds:np.array, metric:str='accuracy'):
+    '''
+    a utility function for scoring the model
+
+    params:
+        y_test: target values
+        preds: model predictions
+        metrics: str of which metric to use
+    '''
     if metric== 'accuracy':
         score = accuracy_score(y_test, preds)
     elif metric=='precision':
